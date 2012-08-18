@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Logo da Volts com Canvas</title>
+
+	<script>
+
+		window.onload = function() {
+			var canvas = document.getElementById( 'canvas' ),
+				ctx    = canvas.getContext( '2d' ),
+				lineWidthCirc = 4,
+				strokeStyleCirc = '#20D9AC', // Verde claro
+				raioCirc = 27,
+				escala = 3;
+
+
+
+			// Circulo Verde
+			ctx.beginPath();
+			ctx.lineWidth = escala * lineWidthCirc;
+			ctx.strokeStyle = strokeStyleCirc;
+			ctx.arc( escala * (raioCirc + lineWidthCirc), escala * (raioCirc + lineWidthCirc), escala * raioCirc, 1.88 * Math.PI, 0.75 * Math.PI, false );
+			ctx.stroke();
+
+			ctx.beginPath();
+			ctx.arc( escala * (raioCirc + lineWidthCirc), escala * (raioCirc + lineWidthCirc), escala * raioCirc, 0.88 * Math.PI, 1.73 * Math.PI, false );
+			ctx.stroke();
+
+			// Raio
+			ctx.beginPath();
+			ctx.moveTo( escala * 30, escala * 23 );
+			ctx.fillStyle = '#fc0';
+			ctx.lineWidth = '1';
+			ctx.lineTo( escala * 62, escala * 12 );
+			ctx.lineTo( escala * 40, escala * 25 );
+			ctx.lineTo( escala * 45, escala * 25 );
+			ctx.lineTo( escala * 32, escala * 32 );
+			ctx.lineTo( escala * 40, escala * 32 );
+			ctx.lineTo( escala *  0, escala * 51 );
+			ctx.lineTo( escala * 24, escala * 36 );
+			ctx.lineTo( escala * 16, escala * 37 );
+			ctx.lineTo( escala * 36, escala * 24 );
+			ctx.closePath();
+			//ctx.stroke();
+			ctx.fill();
+
+		}
+	</script>
+</head>
+<body>
+	<h1>Canvas</h1>
+	<canvas id="canvas" width="300" height="200"></canvas>
+
+	<hr />
+
+	<h1>Imagem</h1>
+	<img src="logo-volts.png" alt="" />
+</body>
+</html>
